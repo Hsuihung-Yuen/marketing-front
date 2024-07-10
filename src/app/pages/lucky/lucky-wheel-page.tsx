@@ -8,11 +8,6 @@ import {queryRaffleAwardList, randomRaffle} from '@/apis'
 import {RaffleAwardVO} from "@/types/RaffleAwardVO";
 
 export function LuckyWheelPage() {
-    //获取浏览器请求地址参数
-    const queryParams = new URLSearchParams(window.location.search);
-    const strategyId = Number(queryParams.get('strategyId'));
-
-    //存放接口查询回来的奖品信息
     const [prizes, setPrizes] = useState([{}])
     const myLucky = useRef()
 
@@ -30,8 +25,10 @@ export function LuckyWheelPage() {
         }
     ])
 
-    // 查询奖品列表，异步
+    // 查询奖品列表
     const queryRaffleAwardListHandle = async () => {
+        const queryParams = new URLSearchParams(window.location.search);
+        const strategyId = Number(queryParams.get('strategyId'));
         const result = await queryRaffleAwardList(strategyId);
         const {code, info, data} = await result.json();
         if (code != "0000") {
@@ -54,18 +51,16 @@ export function LuckyWheelPage() {
 
     // 调用随机抽奖
     const randomRaffleHandle = async () => {
+        const queryParams = new URLSearchParams(window.location.search);
+        const strategyId = Number(queryParams.get('strategyId'));
         const result = await randomRaffle(strategyId);
         const {code, info, data} = await result.json();
         if (code != "0000") {
-            window.alert("获取抽奖奖品列表失败 code:" + code + " info:" + info)
+            window.alert("随机抽奖失败 code:" + code + " info:" + info)
             return;
         }
-
         // 为了方便测试，mock 的接口直接返回 awardIndex 也就是奖品列表中第几个奖品。
-        return data.awardIndex ? data.awardIndex : prizes.findIndex(prize =>
-            //@ts-ignore
-            prize.fonts.some(font => font.id === data.awardId)
-        ) + 1;
+        return data.awardIndex - 1;
     }
 
     useEffect(() => {

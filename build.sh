@@ -1,0 +1,1 @@
+docker build -t thehhy/marketing-front-app:1.0 .
