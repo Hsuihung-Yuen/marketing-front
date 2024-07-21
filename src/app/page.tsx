@@ -8,9 +8,10 @@ const StrategyArmoryButton = dynamic(async()=>(await import("./components/Strate
 
 export default function Home() {
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100"
+             style={{backgroundImage: "url('/background.svg')", backgroundColor: "#e7305e;"}}>
             {/* 头部文案 */}
-            <header className="text-3xl font-bold text-center text-gray-800 my-8">
+            <header className="text-7xl font-bold text-center text-gray-800 my-8" style={{color:"white"}}>
                 抽奖营销系统平台展示
             </header>
 
@@ -32,7 +33,7 @@ export default function Home() {
             </div>
 
             {/* 底部文案 */}
-            <footer className="text-gray-600 text-center my-8">
+            <footer className="text-gray-600 text-center my-8" style={{color:"white"}}>
                 <div>@author: Hhy</div>
                 <div>@github: <a href="https://github.com/Hsuihung-Yuen" target="_blank">Hsuihung-Yuen</a></div>
             </footer>
