@@ -6,6 +6,9 @@ const apiHostUrl = process.env.API_HOST_URL ? process.env.API_HOST_URL : "https:
  * @param activityId
  */
 export const activityStrategyArmory = (activityId?: number) => {
+    const defaultActivityId = 100301;
+    activityId=activityId||defaultActivityId;
+
     return fetch(`${apiHostUrl}/api/v1/raffle/activity/armory?activityId=${activityId}`, {
         method: 'GET',
         headers: {
@@ -21,6 +24,11 @@ export const activityStrategyArmory = (activityId?: number) => {
  */
 export const queryRaffleAwardList = (userId?: string, activityId?: number) => {
     try {
+        const defaultActivityId = 100301;
+        const defaultUserId = "xiaofuge";
+        userId = userId != "null" ? userId : defaultUserId;
+        activityId = activityId || defaultActivityId;
+
         return fetch(`${apiHostUrl}/api/v1/raffle/strategy/query_raffle_award_list`, {
             method: 'POST',
             headers: {
@@ -47,6 +55,11 @@ export const queryRaffleAwardList = (userId?: string, activityId?: number) => {
  */
 export const draw = (userId?: string, activityId?: number) => {
     try {
+        const defaultActivityId = 100301;
+        const defaultUserId = "xiaofuge";
+        userId = userId != "null" ? userId : defaultUserId;
+        activityId = activityId || defaultActivityId;
+
         return fetch(`${apiHostUrl}/api/v1/raffle/activity/draw`, {
             method: 'POST',
             headers: {
@@ -73,6 +86,11 @@ export const draw = (userId?: string, activityId?: number) => {
  */
 export const queryUserActivityAccount = (userId?: string, activityId?: number) => {
     try {
+        const defaultActivityId = 100301;
+        const defaultUserId = "xiaofuge";
+        userId = userId != "null" ? userId : defaultUserId;
+        activityId = activityId || defaultActivityId;
+
         return fetch(`${apiHostUrl}/api/v1/raffle/activity/query_user_activity_account`, {
             method: 'POST',
             headers: {
@@ -98,6 +116,9 @@ export const queryUserActivityAccount = (userId?: string, activityId?: number) =
  */
 export const calendarSignRebate = (userId?: string) => {
     try {
+        const defaultUserId = "xiaofuge";
+        userId = userId != "null" ? userId : defaultUserId;
+
         return fetch(`${apiHostUrl}/api/v1/raffle/activity/calendar_sign_rebate?userId=${userId}`, {
             method: 'POST',
             headers: {
@@ -119,6 +140,9 @@ export const calendarSignRebate = (userId?: string) => {
  */
 export const isCalendarSignRebate = (userId?: string) => {
     try {
+        const defaultUserId = "xiaofuge";
+        userId = userId != "null" ? userId : defaultUserId;
+
         return fetch(`${apiHostUrl}/api/v1/raffle/activity/is_calendar_sign_rebate?userId=${userId}`, {
             method: 'POST',
             headers: {
@@ -141,6 +165,11 @@ export const isCalendarSignRebate = (userId?: string) => {
  */
 export const queryRaffleStrategyRuleWeight = (userId?: string, activityId?: number) => {
     try {
+        const defaultActivityId = 100301;
+        const defaultUserId = "xiaofuge";
+        userId = userId != "null" ? userId : defaultUserId;
+        activityId = activityId || defaultActivityId;
+
         return fetch(`${apiHostUrl}/api/v1/raffle/strategy/query_raffle_strategy_rule_weight`, {
             method: 'POST',
             headers: {
