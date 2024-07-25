@@ -25,7 +25,7 @@ export const activityStrategyArmory = (activityId?: number) => {
 export const queryRaffleAwardList = (userId?: string, activityId?: number) => {
     try {
         const defaultActivityId = 100301;
-        const defaultUserId = "xiaofuge";
+        const defaultUserId = "hhy";
         userId = userId != "null" ? userId : defaultUserId;
         activityId = activityId || defaultActivityId;
 
@@ -56,7 +56,7 @@ export const queryRaffleAwardList = (userId?: string, activityId?: number) => {
 export const draw = (userId?: string, activityId?: number) => {
     try {
         const defaultActivityId = 100301;
-        const defaultUserId = "xiaofuge";
+        const defaultUserId = "hhy";
         userId = userId != "null" ? userId : defaultUserId;
         activityId = activityId || defaultActivityId;
 
@@ -87,7 +87,7 @@ export const draw = (userId?: string, activityId?: number) => {
 export const queryUserActivityAccount = (userId?: string, activityId?: number) => {
     try {
         const defaultActivityId = 100301;
-        const defaultUserId = "xiaofuge";
+        const defaultUserId = "hhy";
         userId = userId != "null" ? userId : defaultUserId;
         activityId = activityId || defaultActivityId;
 
@@ -116,7 +116,7 @@ export const queryUserActivityAccount = (userId?: string, activityId?: number) =
  */
 export const calendarSignRebate = (userId?: string) => {
     try {
-        const defaultUserId = "xiaofuge";
+        const defaultUserId = "hhy";
         userId = userId != "null" ? userId : defaultUserId;
 
         return fetch(`${apiHostUrl}/api/v1/raffle/activity/calendar_sign_rebate?userId=${userId}`, {
@@ -140,7 +140,7 @@ export const calendarSignRebate = (userId?: string) => {
  */
 export const isCalendarSignRebate = (userId?: string) => {
     try {
-        const defaultUserId = "xiaofuge";
+        const defaultUserId = "hhy";
         userId = userId != "null" ? userId : defaultUserId;
 
         return fetch(`${apiHostUrl}/api/v1/raffle/activity/is_calendar_sign_rebate?userId=${userId}`, {
@@ -166,7 +166,7 @@ export const isCalendarSignRebate = (userId?: string) => {
 export const queryRaffleStrategyRuleWeight = (userId?: string, activityId?: number) => {
     try {
         const defaultActivityId = 100301;
-        const defaultUserId = "xiaofuge";
+        const defaultUserId = "hhy";
         userId = userId != "null" ? userId : defaultUserId;
         activityId = activityId || defaultActivityId;
 
@@ -191,7 +191,7 @@ export const queryRaffleStrategyRuleWeight = (userId?: string, activityId?: numb
 
 export const queryUserCreditAccount = (userId?: string)=>{
     try {
-        const defaultUserId = "xiaofuge";
+        const defaultUserId = "hhy";
         userId = userId != "null" ? userId : defaultUserId;
 
         return fetch(`${apiHostUrl}/api/v1/raffle/activity/query_user_credit_account?userId=${userId}`, {
@@ -231,7 +231,7 @@ export const querySkuProductListByActivityId = (activityId?: number)=>{
 
 export const creditPayExchangeSku = (userId?: string, sku?: number) => {
     try {
-        const defaultUserId = "xiaofuge";
+        const defaultUserId = "hhy";
         userId = userId != "null" ? userId : defaultUserId;
 
         return fetch(`${apiHostUrl}/api/v1/raffle/activity/credit_pay_exchange_sku`, {

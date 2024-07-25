@@ -13,7 +13,7 @@ export function MemberCard({allRefresh}) {
     const [userId, setUserId] = useState('');
 
     const getParams = async () => {
-        const defaultUserId = "xiaofuge";
+        const defaultUserId = "hhy";
         const urlUserId=String(new URLSearchParams(window.location.search).get('userId'));
         setUserId(urlUserId != "null" ? urlUserId : defaultUserId);
     }
