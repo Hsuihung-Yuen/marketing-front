@@ -4,10 +4,10 @@ export function StrategyArmory() {
     const strategyArmoryHandle = async () => {
         const queryParams = new URLSearchParams(window.location.search);
         const activityId = Number(queryParams.get('activityId'));
-        if (!activityId){
-            window.alert("请在请求地址中，配置 activityId 值，如：http://116.198.247.165:3000/?userId=xiaofuge&activityId=100301")
-            return;
-        }
+        // if (!activityId){
+        //     window.alert("请在请求地址中，配置 activityId 值，如：http://116.198.247.165:3000/?userId=xiaofuge&activityId=100301")
+        //     return;
+        // }
         const res = await activityStrategyArmory(activityId);
         const {code, info} = await res.json();
         if (code != "0000") {
@@ -20,7 +20,7 @@ export function StrategyArmory() {
 
     return (
         <div
-            className="px-6 py-2 mb-8 text-white bg-blue-500 rounded-full shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
+            className="px-6 py-2 mb-8 text-white bg-yellow-600 rounded-full shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
             style={{cursor: "pointer"}}
             onClick={strategyArmoryHandle}
         >
